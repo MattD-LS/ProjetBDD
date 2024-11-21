@@ -1,4 +1,4 @@
-package classes;
+package org.example.classes;
 
 public enum Type {
     ECRAN("Ecran"),
