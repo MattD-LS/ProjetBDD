@@ -14,12 +14,34 @@ public class MembreServiceImpl implements MembreService {
     private MembreRepository membreRepository;
 
     @Override
+    public void saveMembre(Membre membre) {
+        membreRepository.save(membre);
+    }
+
+    @Override
+    public void updateMembre(Membre membre) {
+        membreRepository.save(membre);
+    }
+
+    @Override
+    public void deleteMembre(Membre membre) {
+        membreRepository.delete(membre);
+    }
+
+    @Override
     public List<Membre> getAllMembre() {
         return membreRepository.findAll();
     }
 
     @Override
     public Membre getMembreById(Long id) {
-         return membreRepository.getMembreById(id);
+         return membreRepository.getMemberById(id);
     }
+
+    @Override
+    public Membre getMembreByNom(String nom) {
+        return  membreRepository.getMembreByNom(nom);
+    }
+
+
 }

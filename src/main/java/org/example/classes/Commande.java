@@ -20,7 +20,14 @@ public class Commande {
     private Double prix;
 
     @ManyToOne
-    private Membre membre;
+    @JoinColumn(name="membre_vendeur_id")
+    private Membre membreVendeur;
+
+    @ManyToOne
+    @JoinColumn(name="membre_client_id")
+    private Membre membreClient;
+
+
 
     @ManyToMany(mappedBy = "commandes")
     private List<Materiel> materials;
