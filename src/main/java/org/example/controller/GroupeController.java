@@ -2,12 +2,13 @@ package org.example.controller;
 
 import org.example.classes.Groupe;
 import org.example.classes.Materiel;
-import org.example.classes.Membre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import services.GroupeService;
+import services.MaterielService;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,9 +18,15 @@ public class GroupeController {
 
     @Autowired
     private GroupeService groupeService;
+    @Autowired
+    private MaterielService materielService;
 
     @GetMapping("/groupe")
-    public String groupe() {
+    public String groupe(Model model) {
+        List<Materiel> materiels = materielService.getAllMateriel();
+        if(!CollectionUtils.isEmpty(materiels)) {
+            model.addAttribute("materiels", materiels);
+        }
         return "groupe";
     }
 

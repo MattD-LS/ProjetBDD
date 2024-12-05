@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer un Groupe</title>
+    <title>Connexion</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -53,30 +52,16 @@
 </head>
 <body>
 <div class="container">
-    <h1>Créer un Groupe</h1>
-    <form action="/groupe-add" method="post">
-        <label for="numero">Numéro du Groupe</label>
-        <input type="text" id="numero" name="numero" required placeholder="Ex: G123">
+    <h1>Connexion membre</h1>
+<form action ="isOk" method="post">
+    <label for="login"> Login utilisateur : </label>
+    <input type="text" name="login" id="login">
 
-        <label for="nom">Nom du Groupe</label>
-        <input type="text" id="nom" name="nom" required placeholder="Nom du Groupe">
+    <label for="password"> Mot de passe : </label>
+    <input type="password" name="password" id="password">
 
-        <label for="ville">Ville</label>
-        <input type="text" id="ville" name="ville" required placeholder="Ville">
-
-        <label for="codePostal">Code Postal</label>
-        <input type="number" id="codePostal" name="codePostal" required placeholder="Ex: 75001">
-
-        <!--<label for="materiel">Matériel Associé</label>
-        <select id="materiel" name="materiel">
-            <option value="">-- Sélectionnez un matériel --</option>
-            <option value="Materiel1">Matériel 1</option>
-            <option value="Materiel2">Matériel 2</option>
-            <option value="Materiel3">Matériel 3</option>
-        </select> --> <!-- Création d'abord du groupe -->
-
-        <button type="submit">Créer Groupe</button>
-    </form>
+    <button type="submit">Connexion</button>
+</form>
 </div>
 </body>
 </html>
